@@ -41,7 +41,7 @@ def tensor_to_image(tensor):
     plt.figure(figsize=(20,10))
     plt.axis('off')
     c=tf.keras.backend.eval(tensor)
-    plt.imsave("media/new.jpg",c)
+    plt.imsave(context['path'],c)
     #context['url']="media/new.jpg"
     return None
 def home(request):
@@ -52,6 +52,7 @@ def modelview(request,value):
         uploaded_file=request.FILES['document']
         fs=FileSystemStorage()
         name=fs.save(uploaded_file.name,uploaded_file)
+        context['path']='media/'+str(uploaded_file.name)
         context['url']=fs.url(name)
         context['value']=value
     return render(request,'transfer/model.html',context)
@@ -66,3 +67,7 @@ def download(request):
     plt.subplot(1, 2, 1)
     tensor_to_image(p)
     return render(request,'transfer/download.html',context)
+def returnhome(request):
+    path=context['path']
+    os.remove(path)
+    return render(request,'transfer/home.html')
