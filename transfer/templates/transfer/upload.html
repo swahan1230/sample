@@ -1,0 +1,74 @@
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Neural Style Transfer</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'upload.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+	<nav>
+		<input type="checkbox" id="check1">
+		<label for="check1" class="checkbtn1">
+			<i class="fas fa-bars"></i>
+		</label>
+		<a href="{% url 'home' %}"><label class="logo1">Home</label></a>
+		<ul>
+			<li><a href="{% url 'home' %}">HOME</a></li>
+			<li><a href="{% url 'about' %}">ABOUT</a></li>
+			<li><a href="{% url 'feedback' %}">FEEDBACK</a></li>
+		</ul>
+	</nav>
+
+<div class="container" >
+	<form method="post" enctype="multipart/form-data">
+	  {% csrf_token %}
+	<div class="gallery" id="imageP">
+			<input type="file" name="document" id="iF" hidden="hidden">
+			<button type="button" id="button_a">CHOOSE A FILE</button>
+			<button type="submit" id="button_b">Upload</button>
+			<img src="" alt="Image Preview" class="image-preview">
+			<span class="text"></span>
+	</div>
+	</form>
+    <a href='{% url 'download' %}'><button type="button" id="button_b">Edit Image</button></a>
+
+<script>
+const inputF=document.getElementById("iF");
+const previewC=document.getElementById("imageP");
+const previewI=previewC.querySelector(".image-preview");
+const previewT=previewC.querySelector(".text");
+const customBtn=document.getElementById("button_a");
+
+customBtn.addEventListener("click",function() {
+	inputF.click();
+});
+
+inputF.addEventListener("change",function() {
+	const file=this.files[0];
+	if(file) {
+		const reader=new FileReader();
+
+		previewT.style.display="none";
+		previewI.style.display="block";
+
+		reader.addEventListener("load",function() {
+			console.log(this);
+			previewI.setAttribute("src",this.result);
+		});
+
+		reader.readAsDataURL(file);
+	} else {
+		previewT.style.display=null;
+		previewI.style.display=null;
+	}
+
+});
+
+
+
+</script>
+</body>
+</html>

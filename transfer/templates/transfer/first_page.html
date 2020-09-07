@@ -1,0 +1,81 @@
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Neural Style Transfer</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<head>
+<body>
+	<nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<label class="logo">Home</label>
+		<ul>
+			<li><a class="active" href="{% url 'home' %}">HOME</a></li>
+			<li><a href="{% url 'about' %}">ABOUT</a></li>
+			<li><a href="{% url 'feedback' %}">FEEDBACK</a></li>
+		</ul>
+	</nav>
+
+<h1>Click On Your Desired Style Image to get started</h1>
+
+
+
+<div class="container">
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=1 %}'><img src="{% static 'style1.jpeg' %}"></a>
+			<div class="glow">PASTEL</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=2 %}'><img src="{% static 'style2.jpeg' %}"></a>
+			<div class="glow">ACRYLIC</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=3 %}'><img src="{% static 'style3.jpeg' %}"></a>
+			<div class="glow">PABLO</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=4 %}'><img src="{% static 'style4.jpeg' %}"></a>
+			<div class="glow">FRESCO</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=5 %}'><img src="{% static 'style5.jpeg' %}"></a>
+			<div class="glow">PICASO</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=6 %}'><img src="{% static 'style6.jpeg' %}"></a>
+			<div class="glow">SALVADOR DALI</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=7 %}'><img src="{% static 'style7.jpeg' %}"></a>
+			<div class="glow">GUERNICA</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=8 %}'><img src="{% static 'style8.jpeg' %}"></a>
+			<div class="glow">GOUACHE</div>
+	</div>
+
+	<div class="gallery">
+		<a href='{% url 'modelview' value=9 %}'><img src="{% static 'style9.jpeg' %}"></a>
+			<div class="glow">THE WEEPING WOMEN</div>
+	</div>
+
+</div>
+
+<footer>
+All Rights Reserved By Us
+</footer>
+</body>
+</html>

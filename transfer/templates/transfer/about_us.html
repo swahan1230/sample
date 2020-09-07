@@ -1,0 +1,109 @@
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Neural Style Transfer</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'about_us.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+	<nav>
+		<input type="checkbox" id="check">
+		<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<a href="first_page.html"><label class="logo">Home</label></a>
+		<ul>
+			<li><a href="{% url 'home' %}">HOME</a></li>
+			<li><a class="active" href="{% url 'about' %}">ABOUT</a></li>
+			<li><a href="{% url 'feedback' %}">FEEDBACK</a></li>
+		</ul>
+	</nav>
+
+<div class="container">
+	<div class="about">
+		<div class="text">
+			<h1>About Us</h1>
+			<div class="line"></div>
+		</div>
+	</div>
+	<div class="content">
+		<p>
+		<b>O</b>ur mission is to provide a novel artistic painting tool that allows everyone to create and share artistic pictures with just a few clicks. All you need to do is upload a photo and choose your favorite style. Our servers will then render your artwork for you.
+
+		We apply an algorithm developed by Leon Gatys, Alexander Ecker and Matthias Bethge. We have now joined forces to provide you with the latest technology in even more accessible way.
+
+		Questions? Email us at rdjdp3535@gmail.com
+		</p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="team">
+		<div class="text">
+			<h1>Our Team</h1>
+			<div class="line1"></div>
+		</div>
+	</div>
+	<div class="content1">
+		<div class="glow">
+		<h1 class="glow1">DIVYA PRAKASH</h1><img src="{% static 'dp.jpeg' %}" class="image1">
+		<h1 class="glow2">ANUSH</h1><img src="{% static 'anush.jpeg' %}" class="image2">
+		<h1 class="glow3">SWAHAN</h1><img src="{% static 'nunna.jpg' %}" class="image3">
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="credit">
+		<div class="text">
+			<h1>Credits</h1>
+			<div class="line2"></div>
+		</div>
+	</div>
+	<div class="content2">
+		<p>
+		<b>O</b>ur algorithm uses a neural network based on the 19-layer VGG network by Karen Simonyan and Andrew Zisserman.
+
+		The Jawaharlal University Of vizayanagaram have been studing on Neural Art and its applications with Deep Learning.
+		</p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="contact">
+		<div class="text">
+			<h1>Contact</h1>
+			<div class="line3"></div>
+		</div>
+	</div>
+	<div class="content3">
+		  <h2 class="d">Name
+		  	<p class="para1">
+		  		Jntuk_ucev,Vizayanagaram
+					Andhra Pradesh
+					523001,India
+		  	</p>
+		  </h2>
+		  <h2 class="p">Contact
+		  	<p class="para2">
+		  		rdjdp3535@gmail.com
+					+91 9398994803
+		  	</p>
+		  </h2>
+	</div>
+</div>
+
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="whatsup"><i class="fa fa-whatsapp"></i></a>
+</div>
+
+<footer>All Rights Reserved By Us</footer>
+</body>
+</html>

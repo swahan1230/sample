@@ -1,0 +1,86 @@
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Neural Style Transfer</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'feedback.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+	<nav>
+		<input type="checkbox" id="check5">
+		<label for="check5" class="checkbtn5">
+			<i class="fas fa-bars"></i>
+		</label>
+		<a href="first_page.html"><label class="logo5">Home</label></a>
+		<ul>
+			<li><a href="{% url 'home' %}">HOME</a></li>
+			<li><a href="{% url 'about' %}">ABOUT</a></li>
+			<li><a class="active5" href="{% url 'feedback' %}">FEEDBACK</a></li>
+		</ul>
+	</nav>
+<div class="glow">
+<h2>FEED BACK FORM</h2>
+</div>
+<div class="container">
+<div class="glow">
+  <form onclick="myFunction()" action="{% url 'submit'%}" autocorrect="off" method=post>{% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="email">Mail Id</label>
+        </div>
+        <div class="col-75">
+          <input type="email" id="email" name="mailid" placeholder="Your mail id..">
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+            <option value="none">Select Country</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+          <option value="russia">Russia</option>
+          <option value="japan">Japan</option>
+          <option value="india">India</option>
+          <option value="china">China</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="feed_back">Feed Back</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+</div>
+</body>
+</html>
