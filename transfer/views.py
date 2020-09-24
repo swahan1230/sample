@@ -48,6 +48,8 @@ def tensor_to_image(tensor):
     #context['url']="media/new.jpg"
     return None
 def home(request):
+    for i in os.listdir(settings.MEDIA_ROOT):
+        os.remove(settings.MEDIA_ROOT+'/'+i)
     return render(request,'transfer/first_page.html')
 def modelview(request,value):
     models['req']=models[str(value)]
